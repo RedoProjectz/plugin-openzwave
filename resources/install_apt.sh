@@ -65,7 +65,10 @@ echo 20 > ${PROGRESS_FILE}
 sudo apt-get update
 echo 30 > ${PROGRESS_FILE}
 echo "Installation des dependances"
-apt_install git python-pip python-dev python-pyudev python-setuptools python-louie make build-essential libudev-dev g++ gcc python-lxml unzip libjpeg-dev python-serial python-requests
+# apt_install git python-pip python-dev python-pyudev python-setuptools python-louie make build-essential libudev-dev g++ gcc python-lxml unzip libjpeg-dev python-serial python-requests
+apt_install python2 git python-dev python-setuptools make build-essential libudev-dev g++ gcc python-lxml unzip libjpeg-dev 
+curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
 echo 40 > ${PROGRESS_FILE}
 # Python
 echo "Installation des dependances Python"
@@ -76,6 +79,12 @@ echo 46 > ${PROGRESS_FILE}
 pip_install six
 echo 47 > ${PROGRESS_FILE}
 pip_install tornado
+echo 48 > ${PROGRESS_FILE}
+pip_install pyudev
+echo 48 > ${PROGRESS_FILE}
+pip_install serial
+echo 48 > ${PROGRESS_FILE}
+pip_install requests
 echo 48 > ${PROGRESS_FILE}
 
 sudo mkdir /opt
